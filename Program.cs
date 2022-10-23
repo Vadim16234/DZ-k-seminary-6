@@ -61,28 +61,33 @@
 // Размерность массива –10. Заполнение массива осуществить случайными числами от 50 до 100.
 
 
-// Console.WriteLine("Загадайте число от 50 до 100");
-// int num = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Загадайте число от 50 до 100");
+int num = int.Parse(Console.ReadLine()!);
 
 
-// int[] array = GetArray(10, 50, 100);
-// Console.WriteLine(String.Join(", ", array));
+int[] array = GetArray(10, 50, 100);
+Console.WriteLine(String.Join(", ", array));
 
 
-// int[] GetArray(int size, int minValue, int maxValue){
-//     int[] res = new int[size];
+int[] GetArray(int size, int minValue, int maxValue){
+    int[] res = new int[size];
 
-//     for (int i = 0; i < size; i++)
-//     {
-//         res[i] = new Random().Next(minValue, maxValue + 1);
-//     }
-//     return res;
-// }
+    for (int i = 0; i < size; i++)
+    {
+        res[i] = new Random().Next(minValue, maxValue + 1);
+    }
+    return res;
+}
 
-// double sum = 1;
-// for (int i = 0; i < array.Length; i++){
-//     if(array[i] < num){
-//         sum = sum * array[i];
-//     }
-// }
-// Console.WriteLine($"Произведение всех целых чисел массива, меньших заданного числа = {sum}");
+long sum = 1;
+for (int i = 0; i < array.Length; i++){
+    if(array[i] < num){
+        sum = sum * array[i];
+    }
+}
+Console.WriteLine($"Произведение всех целых чисел массива, меньших заданного числа = {sum}");
+
+
+// Вначале в в сумме просто писал int. Числа были слишком большими, погуглил и нашел long.
+// Пробовал еще с Int64. 
+// Как более правильно не знаю
